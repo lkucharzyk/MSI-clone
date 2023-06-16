@@ -22,8 +22,15 @@ header{
 }
 
 .hidden{
-    display: none !important;
+    opacity: 0;
+    transition: opacity 0.4s linear;
 }
+
+.visible{
+    opacity: 1;
+    transition: opacity 0.4s linear;
+}
+
 
 div.rollable{
     max-height: 0px;
@@ -110,9 +117,6 @@ div.rolled{
         justify-content: space-between;
         align-items: center;
     }
-
-
-
 }
 
 
@@ -136,6 +140,36 @@ div.rolled{
             justify-content: space-between;
             align-items: center;
         }
+    }
+}
+
+.mobile-menu .overlayed-menu{
+    position: absolute;
+    overflow: auto;
+    height: 600px;
+    top: 23px;
+    padding: 20px 25px;
+    background-color: white;
+    >div{
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $lighter-grey;
+        padding-bottom: 10px;
+        i{
+            margin-right: 20px;
+            font-size: 10px;
+            color: $light-grey;
+        }
+    }
+    li{
+
+     height: 100%;
+    }
+    ul{
+        padding-bottom: 30px;
+    }
+    .submenu-item{
+        padding: 25px 0;
     }
 }
 
