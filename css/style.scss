@@ -26,21 +26,19 @@ header{
 }
 
 div.rollable{
-    padding-top: 0 !important;
-    display: none;
     max-height: 0px;
     overflow: hidden;
-    padding-top: 10px;
-    background-color: white;
-    transition:  max-height 1s, background-color 1s;
+    opacity: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: max-height 0.4s linear, opacity 0.4s linear;
 }
 
 
-div.rollable.rolled{
-   display: block;
+div.rolled{
     max-height: 800px;
-    padding-top: 10px;
-    background-color: $lighter-grey;
+    opacity: 1;
+    transition: max-height 0.4s linear, opacity 0.4s linear;
 }
 
 
@@ -105,17 +103,14 @@ div.rollable.rolled{
     border-top: 1px $lighter-grey solid;
     font-weight: bold;
     font-size: 17px;
-    li{
-        padding: 25px 0;
-    }
     .menu-item>div:first-child{
+        padding: 25px 0;
         margin: 0 25px;
-    }
-    li > div{
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+
 
 
 }
@@ -124,17 +119,22 @@ div.rollable.rolled{
 .mobile-menu .submenu{
     width: 100%;
     background-color: $lighter-grey;
-    margin-top: 25px;
     padding-top: 10px;
     .submenu-item{
         display: flex;
         justify-content: space-between;
         margin: 0 25px;
-        padding: 15px 0;
+        padding: 18px 0;
         font-weight: normal;
         color: $light-grey;
         i{
             margin-right: 5px;
+            font-size: 20px;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     }
 }
