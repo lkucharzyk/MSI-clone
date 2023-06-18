@@ -11,45 +11,41 @@ class Navigation{
 
     handleMobileMainMenu(e){
         const eventTrigger = e.currentTarget;
-        const highLightedEl = eventTrigger.querySelector('div:first-child');
-        highLightedEl.style.backgroundColor = '#ADE1F5';
-        setTimeout(() => {
-            highLightedEl.style.backgroundColor= 'transparent';
-        }, 100);
+        navigation._highlightMenuElement(eventTrigger.querySelector('div:first-child'));
 
        const submenu = eventTrigger.querySelector('.submenu');
        if(submenu.classList.contains('rollable') || submenu.classList.contains('rolled')){
             submenu.classList.toggle('rolled');
             submenu.classList.toggle('rollable');
         }else if(navigation.submenuOpen=== false){
-            console.log('in');
             navigation.submenuOpen = true;
-            submenu.style.display = 'block';
-            submenu.classList.toggle('hidden');
-            submenu.classList.toggle('visible');
-           // eventTrigger.removeEventListener('pointerdown', navigation.handleMobileMainMenu);
-            
-            // function menuReturn(){
-            //     submenu.classList.toggle('hidden');
-            //     submenu.classList.toggle('visible');
-            //     eventTrigger.addEventListener('pointerdown', navigation.handleMobileMainMenu);
-            // }
-
-            // const returnBtn = submenu.querySelector('div');
-            // returnBtn.addEventListener('pointerdown', menuReturn)            
+           submenu.style.display = 'block';
+           setTimeout(() => {
+                submenu.classList.toggle('visible');
+                submenu.classList.toggle('hidden');  
+           }, 1);
         } 
     }
 
-    _menuBack(){
+    _menuBack(e){
         //timeout to make sure this funciton dont fire before handleMobileMainMenu
+        navigation._highlightMenuElement(e.currentTarget);
         setTimeout(() => {
             const submenu = document.querySelector('.submenu.visible');
-            console.log('back');
             submenu.classList.toggle('hidden');
             submenu.classList.toggle('visible');
-            submenu.style.display = 'none';
+            setTimeout(() => {
+                submenu.style.display = 'none';
+            }, 400);
             navigation.submenuOpen =false;
-        }, 1);
+        }, 10);
+    }
+
+    _highlightMenuElement(element){
+        element.style.backgroundColor = '#ADE1F5';
+        setTimeout(() => {
+            element.style.backgroundColor= 'transparent';
+        }, 100);
     }
 
 }

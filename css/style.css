@@ -22,12 +22,12 @@ header {
   position: relative;
 }
 
-.hidden {
+div.hidden {
   opacity: 0;
   transition: opacity 0.4s linear;
 }
 
-.visible {
+div.visible {
   opacity: 1;
   transition: opacity 0.4s linear;
 }
