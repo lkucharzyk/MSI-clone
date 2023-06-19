@@ -32,6 +32,16 @@ div.visible {
   transition: opacity 0.4s linear;
 }
 
+i.hidden {
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+i.visible {
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
 div.rollable {
   max-height: 0px;
   overflow: hidden;
@@ -54,6 +64,7 @@ div.rolled {
 .mobile-menu-wraper .hamburger {
   padding: 10px 16px;
   color: #696969;
+  font-size: 13px;
 }
 
 .main-nav {

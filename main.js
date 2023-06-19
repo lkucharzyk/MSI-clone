@@ -1,5 +1,8 @@
 class Navigation{
     constructor(){
+        this.hambugerBtn = document.querySelector('.hamburger');
+        this.hambugerBtn.addEventListener('pointerdown', this.toggleMobileMenu);
+
         const returnBtns = document.querySelectorAll('.mobile-menu .submenu-heading');
         returnBtns.forEach(btn => btn.addEventListener('pointerdown', this._menuBack));
 
@@ -7,6 +10,50 @@ class Navigation{
         submenuListeners.forEach( listener => listener.addEventListener('pointerdown', this.handleMobileMainMenu));
 
         this.submenuOpen = false;
+    }
+
+    toggleMobileMenu(){
+        navigation._highlightMenuElement(navigation.hambugerBtn);
+
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const icon = navigation.hambugerBtn.querySelector('i');
+        if(mobileMenu.style.display === 'none'){
+            icon.classList.toggle('visible');
+            icon.classList.toggle('hidden');
+            setTimeout(() => {
+                setTimeout(() => {
+                    icon.classList.toggle('visible');
+                     icon.classList.toggle('hidden');
+                     console.log(icon);
+                 }, 150);
+                icon.classList.replace('fa-bars', 'fa-xmark');
+                console.log(icon);
+            }, 150);
+
+            mobileMenu.style.display = 'block';
+            setTimeout(() => {
+                mobileMenu.classList.toggle('visible');
+                mobileMenu.classList.toggle('hidden');  
+           }, 1);
+        }else{
+            icon.classList.toggle('visible');
+            icon.classList.toggle('hidden');
+            setTimeout(() => {
+                setTimeout(() => {
+                    icon.classList.toggle('visible');
+                     icon.classList.toggle('hidden');
+                     console.log(icon);
+                 }, 150);
+                icon.classList.replace('fa-xmark', 'fa-bars');
+                console.log(icon);
+            }, 150);
+
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('visible');
+            setTimeout(() => {
+                mobileMenu.style.display = 'none';
+            }, 400);
+        }
     }
 
     handleMobileMainMenu(e){

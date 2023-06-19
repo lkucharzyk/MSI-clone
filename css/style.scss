@@ -35,6 +35,17 @@ div.visible{
     transition: opacity 0.4s linear;
 }
 
+i.hidden{
+    opacity: 0;
+    transition: opacity 0.2s linear;
+}
+
+i.visible{
+    opacity: 1;
+    transition: opacity 0.2s linear;
+}
+
+
 
 div.rollable{
     max-height: 0px;
@@ -62,6 +73,7 @@ div.rolled{
     .hamburger{
         padding: 10px 16px;
         color: $light-grey;
+        font-size: 13px;;
     }
 }
 
