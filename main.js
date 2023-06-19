@@ -24,10 +24,8 @@ class Navigation{
                 setTimeout(() => {
                     icon.classList.toggle('visible');
                      icon.classList.toggle('hidden');
-                     console.log(icon);
                  }, 150);
                 icon.classList.replace('fa-bars', 'fa-xmark');
-                console.log(icon);
             }, 150);
 
             mobileMenu.style.display = 'block';
@@ -42,12 +40,9 @@ class Navigation{
                 setTimeout(() => {
                     icon.classList.toggle('visible');
                      icon.classList.toggle('hidden');
-                     console.log(icon);
                  }, 150);
                 icon.classList.replace('fa-xmark', 'fa-bars');
-                console.log(icon);
             }, 150);
-
             mobileMenu.classList.toggle('hidden');
             mobileMenu.classList.toggle('visible');
             setTimeout(() => {

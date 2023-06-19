@@ -1,5 +1,6 @@
 $light-grey: #696969;
 $lighter-grey: rgb(238, 238, 238);
+$dark-grey: rgb(114, 114, 114);
 
 *{
     box-sizing: border-box;
@@ -23,6 +24,13 @@ h5{
 
 header{
     position: relative;
+}
+
+.container{
+    max-width: 1330px;
+    width: 100%;
+    margin: auto;
+    padding: 0 25px;
 }
 
 div.hidden{
@@ -94,14 +102,36 @@ div.rolled{
         display: flex;
         align-items: center;
         li{
+            position: relative;
             margin-left: 20px;
             padding: 32px 0;
             font-size: 17px;
             font-weight: bold;
-            color: rgb(163, 163, 163);
+            color: $dark-grey;
+            cursor: pointer;
+            &:before{
+                content: '';
+                background-color: black;
+                position: absolute;
+                top:calc(100% - 3px);
+                left: calc(100% / 2);
+                height: 3px;
+                width: 100%;
+                max-width: 0;
+            }
+            &:hover{
+                color: black;
+                &:before{
+                    height: 3px;
+                    max-width: 100%;
+                    left: 0;
+                    transition: max-width 0.3s, left 0.3s;
+                }
+            }
         }
     }
 }
+
 
 .icons-menu{
     display: flex;
@@ -111,7 +141,48 @@ div.rolled{
         font-size: 17px;
         color: $light-grey;
         margin-left: 21px;
+        cursor: pointer;
     }
+}
+
+
+//dropdown menu
+.dropdown-submenu{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    .products-icons-menu{
+        display: flex;
+        justify-content: center;
+        li{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 30px;
+            >div{
+                color: $dark-grey;
+                font-weight: bold;
+                font-size: 14px;
+            }
+            i{
+                font-size: 38px;
+                padding: 8px 0;
+            }
+        }
+        
+    }
+}
+
+.dropdown-submenu {
+    .inner{
+        display: flex;
+    }
+}
+
+.dropdown-submenu.submenu-products{
+    background-color: $lighter-grey;
 }
 
 //mobile menu
