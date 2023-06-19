@@ -85,7 +85,7 @@ div.rolled{
     }
 }
 
-.main-nav{
+.main-menu-wraper{
     display: flex;
     justify-content: space-between;
     max-width: 1330px;
@@ -169,6 +169,7 @@ div.rolled{
             i{
                 font-size: 38px;
                 padding: 8px 0;
+                color: $light-grey;
             }
         }
         
@@ -178,6 +179,56 @@ div.rolled{
 .dropdown-submenu {
     .inner{
         display: flex;
+        h5{
+            text-transform: uppercase;
+            font-weight: normal;
+            font-size: 12px;
+            margin:20px;
+        }
+        .dropdown-section{
+            flex: 1 0 0;
+            border-right: 2px solid $lighter-grey;
+            margin-right: 20px;
+            li{
+                display: block;
+                margin: 0;
+                padding: 9px 0;
+                font-size: 14px;
+                font-weight: normal;
+                color: $dark-grey;
+            }
+        }
+        .select{
+            h5{
+                color: white;
+            }
+            li{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 0;
+                padding: 10px 10px 10px 0;
+                div{
+                    font-size: 17px;
+                }
+                i{
+                    color: $light-grey;
+                    font-size: 15px;
+                }
+                &:first-child{
+                    border-right: 2px solid black;
+                    >div{
+                        color: black;
+                        
+                    }
+                }
+            }
+        }
+        .photo-section{
+            img{
+                width: 100%;
+            }
+        }
     }
 }
 

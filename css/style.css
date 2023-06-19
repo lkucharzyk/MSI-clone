@@ -74,7 +74,7 @@ div.rolled {
   font-size: 13px;
 }
 
-.main-nav {
+.main-menu-wraper {
   display: flex;
   justify-content: space-between;
   max-width: 1330px;
@@ -157,10 +157,56 @@ div.rolled {
 .dropdown-submenu .products-icons-menu li i {
   font-size: 38px;
   padding: 8px 0;
+  color: #696969;
 }
 
 .dropdown-submenu .inner {
   display: flex;
+}
+.dropdown-submenu .inner h5 {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 12px;
+  margin: 20px;
+}
+.dropdown-submenu .inner .dropdown-section {
+  flex: 1 0 0;
+  border-right: 2px solid rgb(238, 238, 238);
+  margin-right: 20px;
+}
+.dropdown-submenu .inner .dropdown-section li {
+  display: block;
+  margin: 0;
+  padding: 9px 0;
+  font-size: 14px;
+  font-weight: normal;
+  color: rgb(114, 114, 114);
+}
+.dropdown-submenu .inner .select h5 {
+  color: white;
+}
+.dropdown-submenu .inner .select li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 10px 10px 10px 0;
+}
+.dropdown-submenu .inner .select li div {
+  font-size: 17px;
+}
+.dropdown-submenu .inner .select li i {
+  color: #696969;
+  font-size: 15px;
+}
+.dropdown-submenu .inner .select li:first-child {
+  border-right: 2px solid black;
+}
+.dropdown-submenu .inner .select li:first-child > div {
+  color: black;
+}
+.dropdown-submenu .inner .photo-section img {
+  width: 100%;
 }
 
 .dropdown-submenu.submenu-products {
