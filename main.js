@@ -10,6 +10,9 @@ class Navigation{
         submenuListeners.forEach( listener => listener.addEventListener('pointerdown', this.handleMobileMainMenu));
 
         this.submenuOpen = false;
+
+        this.dropdownMenuLinks = document.querySelectorAll('.main-menu .menu-links li');
+        this.dropdownMenuLinks.forEach(link => link.addEventListener('pointerdown', this.handleDropdownMenu));
     }
 
     toggleMobileMenu(){
@@ -67,6 +70,37 @@ class Navigation{
                 submenu.classList.toggle('hidden');  
            }, 1);
         } 
+    }
+
+    handleDropdownMenu(e){
+        const currentlink = e.currentTarget;
+        navigation.dropdownMenuLinks.forEach(link =>{
+            if(link === currentlink){
+                link.classList.toggle('selected');
+            }else{  
+                link.classList.remove('selected')
+            }     
+        })
+
+        let dropdownmenu;
+        if(currentlink.textContent=== 'Products'){
+            dropdownmenu = document.querySelector('.dropdown-submenu.submenu-products');
+        }
+
+        if(dropdownmenu.style.display === 'none'){
+            dropdownmenu.style.display = 'block';
+            setTimeout(() => {
+                dropdownmenu.classList.toggle('visible');
+                dropdownmenu.classList.toggle('hidden');  
+           }, 1);
+        }else{
+            dropdownmenu.classList.toggle('hidden');
+            dropdownmenu.classList.toggle('visible');
+            setTimeout(() => {
+                dropdownmenu.style.display = 'none';
+            }, 400);
+        }
+
     }
 
     _menuBack(e){
