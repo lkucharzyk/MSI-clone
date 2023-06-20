@@ -13,6 +13,9 @@ class Navigation{
 
         this.dropdownMenuLinks = document.querySelectorAll('.main-menu .menu-links li');
         this.dropdownMenuLinks.forEach(link => link.addEventListener('pointerdown', this.handleDropdownMenu));
+        
+        this.menuShowcaseLinks = document.querySelectorAll('.whats-new .middle li');
+        this.menuShowcaseLinks.forEach(link => link.addEventListener('mouseover', this.handleMenuShowcase));
     }
 
     toggleMobileMenu(){
@@ -101,6 +104,37 @@ class Navigation{
             }, 400);
         }
 
+    }
+
+    handleMenuShowcase(e){
+        const currentlink = e.currentTarget;
+
+        let linkIndex;
+        for(let i = 0; i< navigation.menuShowcaseLinks.length; i++){
+            if(navigation.menuShowcaseLinks[i] == currentlink){
+                linkIndex = i;
+            }
+        }
+
+        const showcaseImage = document.querySelector('.whats-new .photo-section img');
+  
+        switch (linkIndex){
+            case 0:
+            showcaseImage.setAttribute('src', 'img/menu-showcase/1.jpeg')
+            break;
+            case 1:
+            showcaseImage.setAttribute('src', 'img/menu-showcase/2.png')
+            break;
+            case 2:
+            showcaseImage.setAttribute('src', 'img/menu-showcase/3.jpeg')
+            break;
+            case 3:
+            showcaseImage.setAttribute('src', 'img/menu-showcase/4.jpeg')
+            break;
+            case 4:
+            showcaseImage.setAttribute('src', 'img/menu-showcase/5.jpeg')
+            break;
+        }
     }
 
     _menuBack(e){
