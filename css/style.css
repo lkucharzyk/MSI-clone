@@ -243,34 +243,63 @@ div.rolled {
 }
 
 .dropdown-submenu.ODM-Solutions .dropdown-section.select {
-  flex: 6 0 0;
+  flex: 2 0 0;
   margin-right: 0;
 }
 .dropdown-submenu.ODM-Solutions .dropdown-section.middle {
-  flex: 9 0 0;
+  flex: 4 0 0;
   padding-left: 50px;
   padding-top: 20px;
-  margin-right: 60px;
+  margin-right: 0px;
   border-right: none;
 }
 .dropdown-submenu.ODM-Solutions .dropdown-section.middle h5 {
+  display: block;
+  max-width: 525px;
   font-weight: bold;
   text-transform: none;
   font-size: 16px;
   margin: 10px 0;
 }
 .dropdown-submenu.ODM-Solutions .dropdown-section.middle p {
+  display: block;
+  max-width: 525px;
   color: #696969;
   font-size: 14px;
 }
-.dropdown-submenu.ODM-Solutions .dropdown-section.middle a {
-  text-decoration: none;
+.dropdown-submenu.ODM-Solutions .dropdown-section.middle .link {
+  position: relative;
+  margin-top: 20px;
+}
+.dropdown-submenu.ODM-Solutions .dropdown-section.middle .link a {
+  display: inline-block;
+  border-bottom: 1px solid #696969;
+  padding-bottom: 3px;
+  font-size: 14px;
   color: #696969;
+  text-decoration: none;
+}
+.dropdown-submenu.ODM-Solutions .dropdown-section.middle .link a:hover {
+  border-bottom: none;
 }
 .dropdown-submenu.ODM-Solutions .dropdown-section.photo-section {
-  flex: 4 0 0;
-  margin-right: 100px;
+  flex: 2 0 0;
+  max-width: 300px;
+  margin-top: 15px;
+  margin-left: 0;
   border-right: none;
+}
+.dropdown-submenu.ODM-Solutions .dropdown-section.photo-section .product-image {
+  max-width: 210px;
+}
+.dropdown-submenu.ODM-Solutions .dropdown-section.photo-section p {
+  display: block;
+  margin-top: -8px;
+  font-size: 14px;
+  color: #696969;
+}
+.dropdown-submenu.ODM-Solutions .dropdown-section.photo-section .product-image:last-child {
+  margin-top: 15px;
 }
 
 .mobile-menu {
