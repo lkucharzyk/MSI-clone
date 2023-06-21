@@ -1,3 +1,8 @@
+const copyrightCloseBtn = document.querySelector('.copyright-info i')
+copyrightCloseBtn.onpointerdown = function(){
+    document.querySelector('.copyright-info').style.display = 'none';
+}
+
 class Navigation{
     constructor(){
         this.hambugerBtn = document.querySelector('.hamburger');
@@ -85,23 +90,39 @@ class Navigation{
             }     
         })
 
-        let dropdownmenu;
+        let currentMenu;
         if(currentlink.textContent=== 'Products'){
-            dropdownmenu = document.querySelector('.dropdown-submenu.submenu-products');
+            currentMenu = document.querySelector('.dropdown-submenu.submenu-products');
+        }else if(currentlink.textContent=== 'ODM Solutions'){
+            currentMenu = document.querySelector('.dropdown-submenu.ODM-Solutions');
+        }else if(currentlink.textContent=== "What's New"){
+            currentMenu = document.querySelector('.dropdown-submenu.whats-new');
         }
 
-        if(dropdownmenu.style.display === 'none'){
-            dropdownmenu.style.display = 'block';
+        const menus= document.querySelectorAll('.dropdown-submenu');
+        console.log(menus);
+        menus.forEach(menu =>{
+            if(menu.style.display === 'block' && menu != currentMenu){
+                menu.classList.toggle('hidden');
+                menu.classList.toggle('visible');
+              setTimeout(() => {
+                  menu.style.display = 'none';
+              }, 200);
+            }
+        })
+
+        if(currentMenu.style.display === 'none'){
+            currentMenu.style.display = 'block';
             setTimeout(() => {
-                dropdownmenu.classList.toggle('visible');
-                dropdownmenu.classList.toggle('hidden');  
+                currentMenu.classList.toggle('visible');
+                currentMenu.classList.toggle('hidden');  
            }, 1);
         }else{
-            dropdownmenu.classList.toggle('hidden');
-            dropdownmenu.classList.toggle('visible');
+            currentMenu.classList.toggle('hidden');
+            currentMenu.classList.toggle('visible');
             setTimeout(() => {
-                dropdownmenu.style.display = 'none';
-            }, 400);
+                currentMenu.style.display = 'none';
+            }, 200);
         }
 
     }
@@ -146,7 +167,7 @@ class Navigation{
             submenu.classList.toggle('visible');
             setTimeout(() => {
                 submenu.style.display = 'none';
-            }, 400);
+            }, 200);
             navigation.submenuOpen =false;
         }, 10);
     }

@@ -35,12 +35,12 @@ header{
 
 div.hidden{
     opacity: 0;
-    transition: opacity 0.4s linear;
+    transition: opacity 0.2s linear;
 }
 
 div.visible{
     opacity: 1;
-    transition: opacity 0.4s linear;
+    transition: opacity 0.2s linear;
 }
 
 i.hidden{
@@ -52,7 +52,6 @@ i.visible{
     opacity: 1;
     transition: opacity 0.2s linear;
 }
-
 
 
 div.rollable{
@@ -71,6 +70,21 @@ div.rolled{
     transition: max-height 0.4s linear, opacity 0.4s linear;
 }
 
+//copyinfo
+
+.copyright-info{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    padding: 8px;
+    font-size: 14px;
+    i{
+        padding: 0 15px;
+    }
+}
 
 
 //main menu
@@ -470,6 +484,9 @@ div.rolled{
     }
 }
 @media(max-width: 991px){
+    .dropdown-menu{
+        display: none !important;
+    }
     .main-menu{
         .menu-links{
             display: none;
