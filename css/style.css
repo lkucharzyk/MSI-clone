@@ -425,6 +425,25 @@ div.rolled {
   padding: 25px 0;
 }
 
+.slide-show img {
+  width: 100%;
+}
+.slide-show .swiper-button-prev, .slide-show .swiper-button-next {
+  height: 75px;
+  width: 45px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.slide-show .swiper-button-prev:after, .slide-show .swiper-button-next:after {
+  font-size: 25px;
+  color: rgb(114, 114, 114);
+}
+.slide-show .swiper-button-prev {
+  left: 0;
+}
+.slide-show .swiper-button-next {
+  right: 0;
+}
+
 @media (min-width: 1300px) {
   .main-menu .menu-links li {
     margin-left: 50px;

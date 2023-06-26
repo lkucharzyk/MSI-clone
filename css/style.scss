@@ -474,6 +474,29 @@ div.rolled{
     }
 }
 
+//SLIDESHOW
+.slide-show{
+    img{
+        width: 100%;
+       }
+    .swiper-button-prev, .swiper-button-next{
+        //display: none;
+        height: 75px;
+        width: 45px;
+        background-color: rgba($color: #fff, $alpha: 0.3);
+        &:after{
+            font-size: 25px;
+            color: $dark-grey;
+        }
+    }
+    .swiper-button-prev{
+        left: 0;
+    }
+    .swiper-button-next{
+        right: 0;
+    }
+}
+
 
 
 @media(min-width: 1300px){
