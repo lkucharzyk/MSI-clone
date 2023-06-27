@@ -429,6 +429,7 @@ div.rolled {
   width: 100%;
 }
 .slide-show .swiper-button-prev, .slide-show .swiper-button-next {
+  display: none;
   height: 75px;
   width: 45px;
   background-color: rgba(255, 255, 255, 0.3);
@@ -443,7 +444,28 @@ div.rolled {
 .slide-show .swiper-button-next {
   right: 0;
 }
+.slide-show .swiper-pagination {
+  display: none;
+}
+.slide-show .swiper-pagination .swiper-pagination-bullet {
+  width: 15px;
+  height: 8px;
+  border-radius: 3px;
+}
+.slide-show .swiper-pagination .swiper-pagination-bullet-active {
+  width: 40px;
+  background-color: #3d3c3c;
+  opacity: 0.7;
+}
 
+@media (max-width: 1300px) {
+  .slide-show .swiper-button-prev, .slide-show .swiper-button-next {
+    display: none !important;
+  }
+  .slide-show .swiper-pagination {
+    display: block;
+  }
+}
 @media (min-width: 1300px) {
   .main-menu .menu-links li {
     margin-left: 50px;

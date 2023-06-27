@@ -1,6 +1,7 @@
 $light-grey: #696969;
 $lighter-grey: rgb(238, 238, 238);
 $dark-grey: rgb(114, 114, 114);
+$darker-grey: #3d3c3c;
 
 *{
     box-sizing: border-box;
@@ -495,6 +496,31 @@ div.rolled{
     .swiper-button-next{
         right: 0;
     }
+    .swiper-pagination{
+        display: none;
+        .swiper-pagination-bullet{
+            width: 15px;
+            height: 8px;
+            border-radius: 3px;
+        }
+        .swiper-pagination-bullet-active{
+            width: 40px;
+            background-color: $darker-grey;
+            opacity: 0.7;
+        }
+    }
+}
+
+
+@media(max-width: 1300px){
+    .slide-show{
+        .swiper-button-prev, .swiper-button-next{
+            display: none !important;
+        }
+        .swiper-pagination{
+            display: block;
+        }
+    }
 }
 
 
@@ -506,6 +532,7 @@ div.rolled{
         }
     }
 }
+
 @media(max-width: 991px){
     .dropdown-menu{
         display: none !important;
