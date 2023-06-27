@@ -428,6 +428,9 @@ div.rolled {
 .slide-show img {
   width: 100%;
 }
+.slide-show source {
+  width: 100%;
+}
 .slide-show .swiper-button-prev, .slide-show .swiper-button-next {
   display: none;
   height: 75px;
