@@ -10,9 +10,6 @@ $darker-grey: #3d3c3c;
     font-family: "Segoe UI", "Arial", "sans-serif";
 }
 
-body{
-    overflow: hidden;
-}
 
 li{
     list-style: none;
@@ -32,6 +29,12 @@ header{
     width: 100%;
     margin: auto;
     padding: 0 25px;
+}
+
+.wide-container{
+    padding: 0 30px;
+    margin: 0 auto;
+    max-width: 1900px;
 }
 
 div.hidden{
@@ -102,6 +105,8 @@ div.rolled{
 
 .main-menu-wraper{
     display: flex;
+    z-index: 999;
+    background-color: white;
     justify-content: space-between;
     max-width: 1330px;
     width: 100%;
@@ -112,7 +117,8 @@ div.rolled{
 .main-menu{
     display: flex;
     align-items: center;
-
+    z-index: 999;
+    background-color: white;
     .menu-links{
         display: flex;
         align-items: center;
@@ -164,19 +170,23 @@ div.rolled{
 
 //dropdown menu
 .dropdown-submenu{
+    z-index: 999;
+    background: white;
     position: absolute;
     left: 0;
     top: 100%;
     width: 100%;
+    border-bottom: 1px solid $light-grey;
     .products-icons-menu{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        margin: 0 15px;
         li{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 15px 30px;
+            margin: 15px 10px;
             >div{
                 color: $dark-grey;
                 font-weight: bold;
@@ -225,6 +235,7 @@ div.rolled{
            // flex: 1 0 0;
             border-right: 2px solid $lighter-grey;
             margin-right: 20px;
+            padding-bottom: 25px;
             li{
                 display: block;
                 margin: 0 20px;
@@ -266,6 +277,7 @@ div.rolled{
         .photo-section{
             margin-top: 50px;
             text-align: center;
+            border-right: none;
             img{
                 padding: 0 30px;
                 width: 100%;
@@ -403,6 +415,8 @@ div.rolled{
     left: 0;
     width: 100%;
     height: 100vh;
+    z-index: 999;
+    background-color: white;
     overflow: auto;
     padding-top: 34px;
     border-top: 1px $lighter-grey solid;
@@ -510,6 +524,64 @@ div.rolled{
             width: 40px;
             background-color: $darker-grey;
             opacity: 0.7;
+        }
+    }
+}
+
+//Innovations section
+
+.innovations{
+    margin-top: 50px;
+    h2{
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 35px;
+        color: rgb(39, 39, 39)
+    }
+}
+.innovations-spotlight{
+    display: flex;
+    flex-wrap: wrap;
+    .spotlight-card{
+        
+        width: 33%;
+        padding: 15px;
+        cursor: pointer;
+        .wraper{
+            overflow: hidden;
+            display: block;
+        }
+        img{
+            display: block;
+            width: 100%;
+            transform: scale(1.0);
+            transition: transform .3s;
+        }
+        .description{
+            background-color: white;
+            transition: background-color 0.2s linear;
+            padding: 10px;
+            h5{
+                font-size: 18px;
+                text-align: center;
+                font-weight: bold;
+            }
+            p{
+                margin-top: 10px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+        }
+        &:hover{
+            .description{
+                background-color:$lighter-grey;
+                transition: background-color 0.2s linear;
+            }
+            img{
+                position: relative;
+                transform: scale(1.05);
+                transition: transform .3s;
+            }
         }
     }
 }

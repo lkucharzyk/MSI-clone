@@ -100,7 +100,6 @@ class Navigation{
         }
 
         const menus= document.querySelectorAll('.dropdown-submenu');
-        console.log(menus);
         menus.forEach(menu =>{
             if(menu.style.display === 'block' && menu != currentMenu){
                 menu.classList.toggle('hidden');
