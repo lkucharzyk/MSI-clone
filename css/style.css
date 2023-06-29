@@ -536,6 +536,35 @@ div.rolled {
   width: 100%;
 }
 
+.service-menu {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 1300px;
+}
+.service-menu .menu-element {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  color: #3d3c3c;
+  cursor: pointer;
+}
+.service-menu .menu-element:hover a {
+  text-decoration: underline;
+}
+.service-menu .menu-element i {
+  display: block;
+  font-size: 36px;
+  padding-bottom: 5px;
+}
+.service-menu .menu-element a {
+  display: block;
+  text-align: center;
+}
+
 @media (max-width: 1300px) {
   .slide-show .swiper-button-prev, .slide-show .swiper-button-next {
     display: none !important;
@@ -577,5 +606,9 @@ div.rolled {
   }
   .innovations-spotlight .spotlight-card {
     width: 100%;
+  }
+  .service-menu .menu-element {
+    margin-top: 20px;
+    width: 50%;
   }
 }/*# sourceMappingURL=style.css.map */
