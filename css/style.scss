@@ -31,6 +31,13 @@ header{
     padding: 0 25px;
 }
 
+.footer-container{
+    max-width: 1330px;
+    width: 100%;
+    margin: auto;
+    padding: 0 25px;
+}
+
 .wide-container{
     padding: 0 30px;
     margin: 0 auto;
@@ -62,7 +69,7 @@ i.visible{
 }
 
 
-div.rollable{
+div.rollable, ul.rollable{
     max-height: 0px;
     overflow: hidden;
     opacity: 0;
@@ -72,11 +79,24 @@ div.rollable{
 }
 
 
-div.rolled{
+div.rolled, ul.rolled{
     max-height: 800px;
     opacity: 1;
     transition: max-height 0.4s linear, opacity 0.4s linear;
 }
+
+
+ul.rollable{
+    opacity: 1;
+    transition: max-height 0.6s linear;
+}
+
+
+ul.rolled{
+    transition: max-height 0.6s linear;
+}
+
+
 
 //copyinfo
 
@@ -633,6 +653,73 @@ div.rolled{
     }
 }
 
+//SMALL BANERS SECTION
+.small-baners{
+    display: flex;
+    margin-bottom: 60px;
+    .small-baner{
+        position: relative;
+        overflow: hidden;
+        width: 50%;
+        img{
+            display: block;
+            width: 100%;
+            transform: scale(1.00);
+            transition: transform .3s;
+        }
+        &:first-child{
+            margin-right: 30px;
+        }
+        .description{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 15px 25px;
+            background-color: rgba($color: $lighter-grey, $alpha: 0.4);
+            h5{
+                font-weight: bold;
+                font-size: 18px;
+            }
+        }
+        &:hover{
+            .description{
+                color: white;
+                background-color: rgba($color: $light-grey, $alpha: 0.4);
+            }
+            img{
+                transform: scale(1.05);
+                transition: transform .3s;
+            }
+        }
+    }
+}
+
+//FOOTER
+footer{
+    border-top: 1px solid $lighter-grey;
+    padding-top: 40px;
+}
+
+.footer-menu{
+    display: flex;
+    justify-content: space-between;
+    h5{
+        position: relative;
+        color: $darker-grey;
+        font-weight: bold;
+        font-size: 17px;
+
+    }
+    ul{
+        color: $light-grey;
+        margin-top: 15px;
+        li{
+            padding: 7px 0;
+        }
+
+    }
+}
+
 
 @media(max-width: 1300px){
     .slide-show{
@@ -651,6 +738,45 @@ div.rolled{
     .main-menu{
         .menu-links li{
             margin-left: 50px;
+        }
+    }
+}
+
+@media(max-width: 1200px){
+    footer{
+        padding-top: 8px;
+    }
+    .footer-menu{
+        flex-direction: column;
+        .footer-submenu{
+            padding: 17px 0;
+            //padding-bottom: 0px;
+            border-bottom: 1px solid $lighter-grey;
+        }
+        h5{
+            
+            color: $light-grey;
+            font-weight: bold;
+            font-size: 17px;
+            &:after{
+                display: block;
+                position: absolute;
+                right: 0;
+                bottom: 5px;
+                font-family: "Font Awesome 5 Free"; 
+                font-weight: 900;
+                font-size: 15px;
+                content: "\f067";
+                color: black;
+            }
+        }
+        ul{
+            color: $light-grey;
+            margin-top: 23px;
+            li{
+                padding: 14px 0;
+            }
+    
         }
     }
 }
@@ -679,22 +805,34 @@ div.rolled{
     .innovations h2{
         font-size: 23px;
     }
-
-    @media(max-width: 767px){
-        .innovations-spotlight{
-            flex-direction: column;
-            flex-wrap: nowrap;
-            margin: 0 -30px;
-            .spotlight-card{
-                width: 100%;
+    
+    .small-baners{
+        flex-direction: column;
+        .small-baner{
+            width: 100%;
+            margin-bottom: 30px;
+            .description{
+                position: static;
+                text-align: center;
             }
         }
-        
-        .service-menu{
-            .menu-element{
-                margin-top: 20px;
-                width: 50%;
-            }
-        }           
     }
+}
+
+@media(max-width: 767px){
+    .innovations-spotlight{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin: 0 -30px;
+        .spotlight-card{
+            width: 100%;
+        }
+    }
+    
+    .service-menu{
+        .menu-element{
+            margin-top: 20px;
+            width: 50%;
+        }
+    }           
 }

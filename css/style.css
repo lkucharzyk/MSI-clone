@@ -25,6 +25,13 @@ header {
   padding: 0 25px;
 }
 
+.footer-container {
+  max-width: 1330px;
+  width: 100%;
+  margin: auto;
+  padding: 0 25px;
+}
+
 .wide-container {
   padding: 0 30px;
   margin: 0 auto;
@@ -55,7 +62,7 @@ i.visible {
   transition: opacity 0.2s linear;
 }
 
-div.rollable {
+div.rollable, ul.rollable {
   max-height: 0px;
   overflow: hidden;
   opacity: 0;
@@ -64,10 +71,19 @@ div.rollable {
   transition: max-height 0.4s linear, opacity 0.4s linear;
 }
 
-div.rolled {
+div.rolled, ul.rolled {
   max-height: 800px;
   opacity: 1;
   transition: max-height 0.4s linear, opacity 0.4s linear;
+}
+
+ul.rollable {
+  opacity: 1;
+  transition: max-height 0.6s linear;
+}
+
+ul.rolled {
+  transition: max-height 0.6s linear;
 }
 
 .copyright-info {
@@ -565,6 +581,67 @@ div.rolled {
   text-align: center;
 }
 
+.small-baners {
+  display: flex;
+  margin-bottom: 60px;
+}
+.small-baners .small-baner {
+  position: relative;
+  overflow: hidden;
+  width: 50%;
+}
+.small-baners .small-baner img {
+  display: block;
+  width: 100%;
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+.small-baners .small-baner:first-child {
+  margin-right: 30px;
+}
+.small-baners .small-baner .description {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px 25px;
+  background-color: rgba(238, 238, 238, 0.4);
+}
+.small-baners .small-baner .description h5 {
+  font-weight: bold;
+  font-size: 18px;
+}
+.small-baners .small-baner:hover .description {
+  color: white;
+  background-color: rgba(105, 105, 105, 0.4);
+}
+.small-baners .small-baner:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+footer {
+  border-top: 1px solid rgb(238, 238, 238);
+  padding-top: 40px;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-menu h5 {
+  position: relative;
+  color: #3d3c3c;
+  font-weight: bold;
+  font-size: 17px;
+}
+.footer-menu ul {
+  color: #696969;
+  margin-top: 15px;
+}
+.footer-menu ul li {
+  padding: 7px 0;
+}
+
 @media (max-width: 1300px) {
   .slide-show .swiper-button-prev, .slide-show .swiper-button-next {
     display: none !important;
@@ -576,6 +653,41 @@ div.rolled {
 @media (min-width: 1300px) {
   .main-menu .menu-links li {
     margin-left: 50px;
+  }
+}
+@media (max-width: 1200px) {
+  footer {
+    padding-top: 8px;
+  }
+  .footer-menu {
+    flex-direction: column;
+  }
+  .footer-menu .footer-submenu {
+    padding: 17px 0;
+    border-bottom: 1px solid rgb(238, 238, 238);
+  }
+  .footer-menu h5 {
+    color: #696969;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .footer-menu h5:after {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 15px;
+    content: "\f067";
+    color: black;
+  }
+  .footer-menu ul {
+    color: #696969;
+    margin-top: 23px;
+  }
+  .footer-menu ul li {
+    padding: 14px 0;
   }
 }
 @media (max-width: 991px) {
@@ -597,8 +709,19 @@ div.rolled {
   .innovations h2 {
     font-size: 23px;
   }
+  .small-baners {
+    flex-direction: column;
+  }
+  .small-baners .small-baner {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .small-baners .small-baner .description {
+    position: static;
+    text-align: center;
+  }
 }
-@media (max-width: 991px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .innovations-spotlight {
     flex-direction: column;
     flex-wrap: nowrap;

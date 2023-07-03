@@ -21,6 +21,9 @@ class Navigation{
         
         this.menuShowcaseLinks = document.querySelectorAll('.whats-new .middle li');
         this.menuShowcaseLinks.forEach(link => link.addEventListener('mouseover', this.handleMenuShowcase));
+
+        this.footerMenuBtns = document.querySelectorAll('.footer-submenu');
+        this.footerMenuBtns.forEach(btn => btn.addEventListener('pointerdown', this.handleMobileMainMenu));
     }
 
     toggleMobileMenu(){
@@ -63,10 +66,18 @@ class Navigation{
     }
 
     handleMobileMainMenu(e){
+        //also used to handle mobile footer menu
         const eventTrigger = e.currentTarget;
-        navigation._highlightMenuElement(eventTrigger.querySelector('div:first-child'));
 
-       const submenu = eventTrigger.querySelector('.submenu');
+        let submenu;
+
+        if(eventTrigger.querySelector('div:first-child')){
+            navigation._highlightMenuElement(eventTrigger.querySelector('div:first-child'));
+             submenu = eventTrigger.querySelector('.submenu');
+        }else{
+            navigation._highlightMenuElement(eventTrigger);
+            submenu = eventTrigger.querySelector('ul')
+        }
        if(submenu.classList.contains('rollable') || submenu.classList.contains('rolled')){
             submenu.classList.toggle('rolled');
             submenu.classList.toggle('rollable');
