@@ -3,6 +3,11 @@ copyrightCloseBtn.onpointerdown = function(){
     document.querySelector('.copyright-info').style.display = 'none';
 }
 
+const popupCloseBtn = document.querySelector('.popup-icon i');
+popupCloseBtn.onpointerdown = function(){
+    document.querySelector('.popup-icon').style.display = 'none';
+}
+
 class Navigation{
     constructor(){
         this.hambugerBtn = document.querySelector('.hamburger');
