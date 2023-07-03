@@ -81,6 +81,9 @@ class Navigation{
        if(submenu.classList.contains('rollable') || submenu.classList.contains('rolled')){
             submenu.classList.toggle('rolled');
             submenu.classList.toggle('rollable');
+            if(eventTrigger.querySelector('h5')){
+                eventTrigger.querySelector('h5').classList.toggle('rotate-icon');
+            }
         }else if(navigation.submenuOpen=== false){
             navigation.submenuOpen = true;
            submenu.style.display = 'block';
